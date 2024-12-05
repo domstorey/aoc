@@ -17,6 +17,8 @@ func main() {
 	}
 	defer file.Close()
 
+	arr := make([][2]int, 0)
+
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
 		line := scanner.Text()
@@ -38,8 +40,13 @@ func main() {
 			continue
 		}
 
-		fmt.Println(num1, num2)
+		intnums := [2]int{num1, num2}
+		arr = append(arr, intnums)
+
+		fmt.Println("Reading: ", num1, num2)
 	}
+
+	fmt.Println("Array: ", arr)
 
 	if err := scanner.Err(); err != nil {
 		fmt.Println("Error reading file:", err)
