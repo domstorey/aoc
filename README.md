@@ -1,7 +1,7 @@
 # aoc
 
 ### init
-go init mod
+go mod init
 
 ### day1 run
  go run day1/day1.go
